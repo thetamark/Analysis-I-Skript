@@ -54,7 +54,7 @@ $n$-Tupel: Mengen $A_1,\dots ,A_n, n\in \mathbb{N}.$\\
 $A_1\times A_2$ wie vorhin\\
 $A_1\times\dots\times A_{n+1} := (A_1\times\dots\times A_n)\times A_{n+1}, n\in \mathbb{N}$ (induktiv)\\
 Beobachtung:\\
-$(A\times B)\times C = A\times (B\times C) + \{(a,b,c)|a\in A, b\in B, c\in C\} = ((a,b),c) = (a,(b,c))$\\
+$(A\times B)\times C = A\times (B\times C) = \{(a,b,c)|a\in A, b\in B, c\in C\} = ((a,b),c) = (a,(b,c))$\\
 Genauer: $\exists$ Bijektion $\Phi : (A\times B) \times C \rightarrow A\times (B\times C)$
 
 \begin{defi}[Graph einer Abbildung]
@@ -296,8 +296,7 @@ $$[2]=\{1,2\}, [3]=\{1,2,3\}$$
 		 & \#\{k\text{-elementige Teilmengen von } \{1,\ldots,n+1\} \}                                     \\
 		 & =\#\{k\text{-elementige Teilmengen von } \{1,\ldots,n\} \}                                      \\&+ \#\{(k-1)\text{-elementige Teilmengen von } \{1,\ldots,n\} \} \\
 		 & \overset{\text{IV}}{=} \binom{n}{k} + \binom{n}{k-1} \overset{\text{Lem. 8}}{=} \binom{n+1}{k}.
-	\end{align*}
-\end{bew}
+	\end{align*} \end{bew}
 \begin{satz}[Binomische Formel]
 	\[ a,b\in\R,n\in\N:(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k}. \]
 \end{satz}
@@ -323,7 +322,7 @@ $$[2]=\{1,2\}, [3]=\{1,2,3\}$$
 	\end{align*}
 \end{bew}
 \textbf{Notation:} Geg. Menge \(A\), sei \[ \{0,1\}^A := \{ \text{Funktion }f:A\rightarrow \{0,1\} \} \] \(= \) Menge aller \(\{0,1\}\)-wertigen Funktionen mit Definitionsbereich \(A\).\\
-Allg.: \(A,B\) Mengen, \(B^A := \{ \text{Funktion } f: a\rightarrow B\}\).
+Allg.: \(A,B\) Mengen, \(B^A := \{ \text{Funktion } f: A\rightarrow B\}\).
 \begin{satz}
 	Sei \(A\neq\emptyset\) eine endliche Menge. Dann ist \[\#(\{0,1\}^A) = 2^{\#A}.\]
 \end{satz}
@@ -331,8 +330,8 @@ Allg.: \(A,B\) Mengen, \(B^A := \{ \text{Funktion } f: a\rightarrow B\}\).
 	Sei \(n := \# A \in\N \).\\
 	\(\Rightarrow\) Bijektion \(h:\{1,\ldots,n\} \rightarrow A\).\\
 	\( \Rightarrow \) können annehmen \(A = \{1,2,\ldots,n\}\)\\
-	z.z. \(\#( \{0,1\}^[n] ) = 2^n\).\\
-	Induktion: \(n=1 \exists \) Fkt. \(f_1,f_2 : \{1\} \rightarrow \{0,1\} \\
+	z.z. \(\#( \{0,1\}^{[n]}) = 2^n\).\\
+	Induktion: \(n=1 \) \exists Fkt. \(f_1,f_2 : \{1\} \rightarrow \{0,1\} \\
 	f_1(1) = 0 \quad f_2(1) = 1 \)\\
 	Formel stimmt für \(n=1\).
 	Ang. Formel stimmt für \(n\geq 1\). Fkt. \(f: \{1,\ldots, n+1\} \rightarrow \{0,1\} \)\\
@@ -341,7 +340,7 @@ Allg.: \(A,B\) Mengen, \(B^A := \{ \text{Funktion } f: a\rightarrow B\}\).
 		\item \(S_0 = \{f: \{1,\ldots,n\} \rightarrow \{0,1\}: f(n+1) = 0 \}\)
 		\item \(S_1 = \{f: \{1,\ldots,n\} \rightarrow \{0,1\}: f(n+1) = 1 \}\)
 	\end{enumerate}
-	\[S_0 \cap S_1 = \emptyset, \{0,1\}^{[n+1]} = S_0 \cup S_1 \]
+	\[S_0 \cap S_1 = \{\emptyset, \{0,1\}^{[n+1]} \} = S_0 \cup S_1 \]
 	\[\underbrace{\# S_0}_{=\#S_1} = \# (\{0,1\}^{[n]})  \overset{\text{IA}}{=} 2^n \]
 	\[ \Rightarrow \# (\{0,1\}^{n+1}) = \#S_0+\#S_1 = 2^n + 2^n = 2^{n+1}. \]
 \end{bew}
